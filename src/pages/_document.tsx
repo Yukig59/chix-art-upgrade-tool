@@ -7,8 +7,8 @@ class MyDocument extends Document {
       <Html data-theme={DEFAULT_THEME}>
         <Head>
           <meta
-            name="description"
-            content="Everything you need to start your Solana dApp"
+            name="CHIX ART UPGRADE PORTAL"
+            content="Solana dApp to upgrade CHIX NFT art"
           />
           <link rel="icon" href="/favicon.ico" />
 

@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { ConnectionProvider } from "@solana/wallet-adapter-react";
-import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { LedgerWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter } from "@solana/wallet-adapter-wallets";
 import ClientWalletProvider from "@components/contexts/ClientWalletProvider";
 import { NETWORK } from "@utils/endpoints";
 
@@ -17,7 +17,7 @@ const ReactUIWalletModalProviderDynamic = dynamic(
 );
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
+  const wallets = useMemo(() => [new PhantomWalletAdapter(), new SolflareWalletAdapter(), new LedgerWalletAdapter()], []);
 
   return (
     <ConnectionProvider endpoint={NETWORK}>

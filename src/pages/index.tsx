@@ -125,10 +125,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>NextJS Solana Starter Kit</title>
+        <title>CHIX ART UPGRADE PORTAL</title>
         <meta
-          name="description"
-          content="Everything you need to start your Solana dApp"
+          name="CHIX ART UPGRADE PORTAL"
+          content="Solana dApp to upgrade CHIX NFT art"
         />
       </Head>
       <DrawerContainer>
@@ -145,21 +145,6 @@ const Home: NextPage = () => {
           />
         </div>
       </DrawerContainer>
-      <Modal
-        onClick={onTxClick}
-        butttonState={txState}
-        headerContent="Send some $BONK to someone you love"
-        buttonContent="Send $BONK"
-        isToken={true}
-        id="bonk-modal"
-      />
-      <Modal
-        onClick={onTxClick}
-        butttonState={txState}
-        headerContent="Send some SOL to someone you love"
-        buttonContent="Send SOL"
-        id="sol-modal"
-      />
     </>
   );
 };

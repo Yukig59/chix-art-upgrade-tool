@@ -9,14 +9,23 @@ export function ItemList({ items }: Props) {
   if (!items) {
     return null;
   }
-
+  let chixNfts = items.filter((item) => {
+    return item.collectionAddress === "CzrvMt4eVNtgkvTsiMUcZGbpJQyvBxaqxLkGVk1RoKD8";
+  });
+  console.log(chixNfts);
   return (
+  <>
+<div className={"flex flex-row justify-center mb-5"}>
+  <button className={"btn btn-primary"}>Upgrade NFTs</button>
+
+</div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {items.length === 0 ? (
         <p className="p-4">No NFTs in your wallet</p>
       ) : (
-        items.map((item) => <Item data={item} key={item.tokenAddress} />)
+        chixNfts.map((item) => <Item data={item} key={item.tokenAddress} />)
       )}
     </div>
+  </>
   );
 }
