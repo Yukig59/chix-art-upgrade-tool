@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export type ItemData = {
   collectionAddress: string;
@@ -11,14 +11,19 @@ export type ItemData = {
 
 type Props = {
   data: ItemData;
+  onChange: any
 };
 
-export function Item({ data }: Props) {
+export function Item({ data, onChange }: Props) {
+  const [selected, setSelected] = useState(false)
   const name = data.name;
   const collection = data.collectionName;
-
+const toggleSelect = () => {
+    setSelected(!selected)
+    onChange(data)
+}
   return (
-    <div className="card shadow-xl bg-neutral text-neutral-content">
+    <a className={`card shadow-xl bg-neutral text-neutral-content ${selected?"border-4 border-solid border-indigo-500":""} `} onClick={toggleSelect}>
       {data.imageUrl && (
         <figure className="relative h-80">
           <img
@@ -32,6 +37,6 @@ export function Item({ data }: Props) {
         <h2 className="card-title m-0">{name}</h2>
         {collection && <p>{collection}</p>}
       </div>
-    </div>
+    </a>
   );
 }
